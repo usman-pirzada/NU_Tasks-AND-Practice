@@ -16,6 +16,7 @@ int main() {
     struct Travel_Package pkg[n];
 
     for(int i = 0; i < n; i++) {
+        printf("\nPackage#%d", i + 1);
         printf("Enter Package Name: ");
         scanf("%s", &pkg[i].name);
         printf("Enter its Destination: ");
@@ -29,7 +30,8 @@ int main() {
     }
     
     for(int i = 0; i < n; i++) {
-        printf("\n\nNamePackage: %s", pkg[i].name);
+        printf("\nPackage#%d", i + 1);
+        printf("\nNamePackage: %s", pkg[i].name);
         printf("\nDestination: %s", pkg[i].dest);
         printf("\nDelievery Duration: %d Hrs", pkg[i].duration);
         printf("\nCost: %.2f", pkg[i].cost);
