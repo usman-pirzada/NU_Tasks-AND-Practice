@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+    int n;
     printf("How many numbers do you want to enter in the array?: ");
     scanf("%d", &n);
     int arr[n];
