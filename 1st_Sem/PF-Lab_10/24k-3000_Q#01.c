@@ -27,13 +27,13 @@ int main() {
         printf("Enter no. of seats available: ");
         scanf("%d", &pkg[i].seats);
     }
-
+    
     for(int i = 0; i < n; i++) {
-        printf("NamePackage: %s", pkg[i].name);
-        printf("Destination: %s", pkg[i].dest);
-        printf("Delievery Duration: %d Hrs", pkg[i].duration);
-        printf("Cost: %.2f", pkg[i].cost);
-        printf("Seats Available: %d", pkg[i].seats);
+        printf("\n\nNamePackage: %s", pkg[i].name);
+        printf("\nDestination: %s", pkg[i].dest);
+        printf("\nDelievery Duration: %d Hrs", pkg[i].duration);
+        printf("\nCost: %.2f", pkg[i].cost);
+        printf("\nSeats Available: %d", pkg[i].seats);
     }
 
     return 0;
