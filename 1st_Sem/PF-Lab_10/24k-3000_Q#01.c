@@ -6,9 +6,10 @@ struct Travel_Package {
     int duration;
     float cost;
     int seats;
-}
+};
 
 int main() {
+    int n;
     printf("How much package\'s data do you want to store: ");
     scanf("%d", &n);
 
