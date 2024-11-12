@@ -31,7 +31,7 @@ int main() {
     for(int i = 0; i < n; i++) {
         printf("NamePackage: %s", pkg[i].name);
         printf("Destination: %s", pkg[i].dest);
-        printf("Delievery Duration: %d Hrs", pkg1[i].duration);
+        printf("Delievery Duration: %d Hrs", pkg[i].duration);
         printf("Cost: %.2f", pkg[i].cost);
         printf("Seats Available: %d", pkg[i].seats);
     }
