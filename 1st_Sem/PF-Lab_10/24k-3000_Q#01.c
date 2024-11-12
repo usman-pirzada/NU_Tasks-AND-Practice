@@ -16,7 +16,7 @@ int main() {
     struct Travel_Package pkg[n];
 
     for(int i = 0; i < n; i++) {
-        printf("\nPackage#%d", i + 1);
+        printf("\nPackage#%d\n", i + 1);
         printf("Enter Package Name: ");
         scanf("%s", &pkg[i].name);
         printf("Enter its Destination: ");
