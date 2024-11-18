@@ -27,13 +27,13 @@ void tenure() {
 	
 	for(int i = 0; i < n; i++) {
 		if(emp[i].dateOfJoining.year < (currentDate.year - 3)) {
-			printf("\n%s has a tenure of more than three years.", emp[n].employeeName);
+			printf("\n%s has a tenure of more than three years.", emp[i].employeeName);
 			count++;
 		} else if(emp[i].dateOfJoining.year == (currentDate.year - 3) && emp[i].dateOfJoining.month < currentDate.month) {
-			printf("\n%s has a tenure of more than three years.", emp[n].employeeName);
+			printf("\n%s has a tenure of more than three years.", emp[i].employeeName);
 			count++;
 		} else if((emp[i].dateOfJoining.year == (currentDate.year - 3)) && (emp[i].dateOfJoining.month == currentDate.month) && (emp[i].dateOfJoining.date <= currentDate.date)) {
-			printf("\n%s has a tenure of more than three years.", emp[n].employeeName);
+			printf("\n%s has a tenure of more than three years.", emp[i].employeeName);
 			count++;
 		}
 	}
