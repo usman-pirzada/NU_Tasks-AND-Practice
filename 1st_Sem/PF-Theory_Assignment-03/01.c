@@ -52,8 +52,8 @@ void assign() {
 		fgets(emp[i].employeeName, sizeof(emp[n].employeeName), stdin);
 		printf("Enter employee\'s date of joining as (DD MM YYYY): ");
 		scanf("%d %d %d", &emp[i].dateOfJoining.date, &emp[i].dateOfJoining.month, &emp[i].dateOfJoining.year);
-		tenure();
 	}
+	tenure();
 }
 
 int main() {
