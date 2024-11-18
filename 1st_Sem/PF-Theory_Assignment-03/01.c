@@ -24,19 +24,21 @@ void tenure() {
 	
 	printf("\nEnter the current date in this format (DD MM YYYY): ");
 	scanf("%d %d %d", &currentDate.date, &currentDate.month, &currentDate.year);
-	
+	printf("\n");
 	for(int i = 0; i < n; i++) {
 		if(emp[i].dateOfJoining.year < (currentDate.year - 3)) {
-			printf("\n%s has a tenure of more than three years.", emp[i].employeeName);
+			printf("%s has a tenure of more than three years.\n", emp[i].employeeName);
 			count++;
 		} else if(emp[i].dateOfJoining.year == (currentDate.year - 3) && emp[i].dateOfJoining.month < currentDate.month) {
-			printf("\n%s has a tenure of more than three years.", emp[i].employeeName);
+			printf("%s has a tenure of more than three years.\n", emp[i].employeeName);
 			count++;
-		} else if((emp[i].dateOfJoining.year == (currentDate.year - 3)) && (emp[i].dateOfJoining.month == currentDate.month) && (emp[i].dateOfJoining.date <= currentDate.date)) {
-			printf("\n%s has a tenure of more than three years.", emp[i].employeeName);
+		} else if((emp[i].dateOfJoining.year == (currentDate.year - 3)) && (emp[i].dateOfJoining.month == currentDate.month) && (emp[i].dateOfJoining.date < currentDate.date)) {
+			printf("%s has a tenure of more than three years.\n", emp[i].employeeName);
 			count++;
 		}
 	}
+	
+	printf("The total number of employees with more than 3 years tenure are: %d", count);
 	
 	printf("\nPress any character to exit.");
 	ch = getchar();
