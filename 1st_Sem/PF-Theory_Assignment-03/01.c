@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 
-#define n 4	// As there are four customers
+#define n 2	// As there are four customers
 
 // ------------------------------------------
 struct Date {
@@ -27,7 +27,7 @@ void tenure() {
 	printf("\n");
 	for(int i = 0; i < n; i++) {
 		if(emp[i].dateOfJoining.year < (currentDate.year - 3)) {
-			printf("%s has a tenure of more than three years.\n", emp[i].employeeName);
+			printf("%s \rhas a tenure of more than three years.\n", emp[i].employeeName);
 			count++;
 		} else if(emp[i].dateOfJoining.year == (currentDate.year - 3) && emp[i].dateOfJoining.month < currentDate.month) {
 			printf("%s has a tenure of more than three years.\n", emp[i].employeeName);
@@ -38,7 +38,7 @@ void tenure() {
 		}
 	}
 	
-	printf("The total number of employees with more than 3 years tenure are: %d", count);
+	printf("\nThe total number of employees with more than 3 years tenure are: %d", count);
 	
 	printf("\nPress any character to exit.");
 	ch = getchar();
