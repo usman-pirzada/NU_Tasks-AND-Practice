@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 
-#define n 2	// As there are four customers
+#define n 4	// As there are four customers
 
 // ------------------------------------------
 struct Date {
