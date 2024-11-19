@@ -2,6 +2,20 @@ body{
     background-color: lightgoldenrodyellow;
 }
 
-h1{
-    color: darkred;
+.index-body{
+    h1{
+        color: darkred;
+    }
 }
+
+.menu-body{
+    em{
+        font: bold;
+        color: green;
+        /* border-inline-color: green; */
+    }
+}
+
+/* .contact-body{
+
+} */
