@@ -1,0 +1,26 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+nav {
+    padding: 10px;
+    margin: auto;
+}
+
+nav:hover {
+    color: black;
+    cursor: pointer;
+}
+
+em {
+        font-weight: bold;
+        color: green;
+        /* border-inline-color: green; */
+}
+
+img {
+    width: 400 px;
+    margin-top: -150px;
+    border: dashed brown;
+    float: right;
+}

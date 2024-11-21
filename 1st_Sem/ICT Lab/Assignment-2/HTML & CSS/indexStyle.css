@@ -1,0 +1,24 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+nav {
+    padding: 10px;
+    margin: auto;
+}
+
+nav:hover {
+    color: black;
+    cursor: pointer;
+}
+
+h1 {
+        color: darkred;
+}
+
+img {
+        display: block;  /* Makes the image a block-level element */
+        margin-left: auto;  /* Auto left margin */
+        margin-right: auto; /* Auto right margin */
+        border: 2px solid black;
+}

@@ -1,0 +1,13 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+nav {
+    padding: 10px;
+    margin: auto;
+}
+
+nav:hover {
+    color: black;
+    cursor: pointer;
+}
