@@ -1,17 +1,23 @@
-body{
+body {
     background-color: lightgoldenrodyellow;
 }
 
-.index-body{
-    h1{
-        color: darkred;
-    }
+nav {
+    padding: 10px;
+    margin: auto;
 }
 
-.menu-body{
-    em{
-        font: bold;
+nav:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.index-body h1 {
+        color: darkred;
+}
+
+.menu-body em {
+        font-weight: bold;
         color: green;
         /* border-inline-color: green; */
-    }
 }
