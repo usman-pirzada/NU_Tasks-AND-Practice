@@ -20,7 +20,7 @@ em {
 
 img {
     width: 400 px;
-    margin-top: -150px;
+    /* margin-top: -150px; */
     border: dashed brown;
     float: right;
 }
