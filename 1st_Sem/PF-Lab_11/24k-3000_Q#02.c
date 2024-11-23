@@ -31,7 +31,7 @@ void displaySal(int n) {
 		printf("Basic Pay: %d\n", emp[i].sal.basicPay);
 		printf("Bonuses: %d\n", emp[i].sal.bonuses);
 		printf("Deductions: %d\n", emp[i].sal.deductions);
-		printf("Net Salary: %d", emp[i].sal.netSalary);
+		printf("Net Salary: %d\n", emp[i].sal.netSalary);
 	}
 }
 
@@ -53,5 +53,8 @@ int main() {
 		printf("Enter Deductions: ");
 		scanf("%d", &emp[i].sal.deductions);
 	}
-	displaySal(n);
+	netSal(n);	// Calculate Net Salary
+	displaySal(n);	// Display Complete Details
+	
+	return 0;
 }
