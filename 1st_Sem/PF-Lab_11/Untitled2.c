@@ -26,10 +26,8 @@ int main() {
 	int select = 0;
 	printf("\nWhich operation do you want to perform? Enter appropriate number to perform that operation:\n");
 	printf(" 1) Add Players\n 2) Search a Player by Position\n 3) Display Team Details\n 4) Exit\n");
-	scanf(" %d", &select);
+	scanf("%d", &select);
 	getchar();
-	//fflush(stdin);
-	//select = getchar();
 	switch(select) {
 		case 1:
 			addPlayers();
@@ -69,6 +67,7 @@ void addPlayers() {
 	printf("\nStart entering players' details' in order ?\n");
 	for(int p = 0; p < plyrSize; p++) {
 		printf("\n\tPlayer #%d\n", p + 1);
+		fflush(stdout);
 		printf("Enter Name: ");
 		fgets(teams[t].plyr[p].name, sizeof(teams[t].plyr[p].name), stdin);
 		printf("Enter Age: ");

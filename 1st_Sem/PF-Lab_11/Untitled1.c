@@ -69,6 +69,7 @@ void addPlayers() {
 	printf("\nStart entering players' details' in order ?\n");
 	for(int p = 0; p < plyrSize; p++) {
 		printf("\n\tPlayer #%d\n", p + 1);
+		fflush(stdout);
 		printf("Enter Name: ");
 		fgets(teams[t].plyr[p].name, sizeof(teams[t].plyr[p].name), stdin);
 		printf("Enter Age: ");
