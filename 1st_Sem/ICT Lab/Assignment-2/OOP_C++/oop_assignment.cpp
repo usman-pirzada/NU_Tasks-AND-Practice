@@ -13,7 +13,7 @@ public:
 		balance = 0;
 	}
 	
-	BankAccount(string acNo) {
+	BankAccount(string acNo) {	// Constructor
 		accountNumber = acNo;
 	}
 	void updateBal(double amount) {
@@ -36,7 +36,7 @@ public:
 };
 
 int main() {
-	BankAccount account;
+	BankAccount account[100];
 	int getch = 0, exit = 0, amount, currentBal, i = 0, j = 0, option;
 	string acNo;
 	
@@ -47,10 +47,9 @@ int main() {
 	cout << endl;
 	switch(option) {
 		case 1:
-			account[i].initializeBal();
 			cout << "\nCreate your Bank Account by setting your Account Number: ";
 			cin >> acNo;
-			BankAccount(acNo)
+			BankAccount(acNo);
 			cout << "\nAccount Created Successfully! Your default account balance is " << account[i].chkBal() << endl;
 			i++;
 			break;
