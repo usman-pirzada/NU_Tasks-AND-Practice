@@ -43,9 +43,9 @@ int main() {
 	for(int i = 0; i < n; i++) {
 		printf("\n\tEnter the datails of Employee_%d\n", i + 1);
 		printf("Enter ID: ");
-		scanf("%s", &emp[i].ID);
+		scanf("%s", emp[i].ID);
 		printf("Enter Name: ");
-		scanf("%s", &emp[i].Name);
+		scanf("%s", emp[i].Name);
 		printf("Enter Basic Pay: ");
 		scanf("%d", &emp[i].sal.basicPay);
 		printf("Enter Bonuses: ");
