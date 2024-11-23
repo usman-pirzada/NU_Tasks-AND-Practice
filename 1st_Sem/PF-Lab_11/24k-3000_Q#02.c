@@ -16,7 +16,7 @@ struct Employee {
 
 // --------------FUNCTIONS----------------
 void netSal(int n) {
-	for(int i = 1; i < n; i++) {
+	for(int i = 0; i < n; i++) {
 		emp[i].sal.netSalary = (emp[i].sal.basicPay + emp[i].sal.bonuses) - emp[i].sal.deductions;
 	}
 }
