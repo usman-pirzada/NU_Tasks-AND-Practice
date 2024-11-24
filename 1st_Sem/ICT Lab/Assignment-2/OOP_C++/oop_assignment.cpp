@@ -9,78 +9,77 @@ private:
 public:
 	
 	BankAccount() {	// Constructor
-		accountNumber = "";
 		balance = 0;
 	}
 	
 	BankAccount(string acNo) {	// Constructor
 		accountNumber = acNo;
+		balance = 0;
 	}
-	void updateBal(double amount) {
-		balance += amount;
-	}
+	
 	double chkBal() {
 		return balance;
 	}
 	void deposit(double amount) {
+		if(amount <= 0) {
+			cout << "\nInvalid Input!! Amount cannot be added." << endl;
+			return;
+		}
 		balance += amount;
+		cout << "\nAmount of Rs. " << amount << " has been added to your account successfully!";
 	}
 	void withdraw(double amount) {
-		if(amount <= balance) {
+		if(amount <= balance && amount > 0) {
 			balance -= amount;
-			cout << "\nAmount of Rs." << chkBal() << "drawn successfully" << endl;
+			cout << "\nAmount of Rs. " << amount << " drawn successfully!" << endl;
 		} else {
-			cout << "\nYour entered amount exceeded your current balance!!" << endl;
+			cout << "\nYour entered amount is invalid or exceeded your current balance!!" << endl;
 		}
 	}
 };
 
 int main() {
-	BankAccount account[100];
-	int getch = 0, exit = 0, amount, currentBal, i = 0, j = 0, option;
+	int amount, option;
 	string acNo;
 	
-	do {
-	cout << "\nWhich operation do you want to perform? Enter appropriate number to proceed:\n";
-	cout << " 1) Create Account\n 2) Check Balance\n 3) Add Balance\n 4) Withdraw Amout\n";
-	cin >> option;
-	cout << endl;
-	switch(option) {
-		case 1:
-			cout << "\nCreate your Bank Account by setting your Account Number: ";
-			cin >> acNo;
-			BankAccount(acNo);
-			cout << "\nAccount Created Successfully! Your default account balance is " << account[i].chkBal() << endl;
-			i++;
-			break;
-			
-		case 2:
-			cout << "\nEnter your Account Number proceed: ";
-			cin >> j;
-			cout << "\nYour Current Balance is: " << account[j].chkBal() << endl;
-			break;
-			
-		case 3:
-			cout << "\nEnter your Account Number proceed: ";
-			cin >> j;
-			cout << "\nEnter the amount of Balance to add to your Account: ";
-			cin >> amount;
-			account[j].deposit(amount);
-			break;
-			
-		case 4:
-			cout << "\nEnter your Account Number proceed: ";
-			cin >> j;
-			cout << "\nEnter the amount of Balance to withdraw from your Account: ";
-			cin >> amount;
-			account[j].withdraw(amount);
-			break;
-			
-		default:
-			cout << "\nInvalid Input!!" << endl;
-	}
+	cout << "\nEnter account number to create your Bank Account: ";
+	cin >> acNo;
+	BankAccount account(acNo);
 	
-	}while(exit != 1);
+	char proceed = '1';
+	do {
+		cout << "\nWhich operation do you want to perform? Enter appropriate number to proceed:\n";
+		cout << " 1) Check Current Balance\n 2) Add Balance\n 3) Withdraw Amount\n 4) Exit" << endl;
+		cin >> option;
+		cout << endl;
+		switch(option) {
+			case 1:
+				cout << "\nYour Current Balance is: Rs. " << account.chkBal() << endl;
+				break;
+
+			case 2:
+				cout << "\nEnter the amount of Balance to add to your Account: ";
+				cin >> amount;
+				account.deposit(amount);
+				break;
+
+			case 3:
+				cout << "\nEnter the amount of Balance to withdraw from your Account: ";
+				cin >> amount;
+				account.withdraw(amount);
+				break;
+
+			case 4:
+				cout << "\nExiting Program.....";
+				return 0;
+
+			default:
+				cout << "\nInvalid Input!!" << endl;
+		}
+
+		cout << "\nEnter \'0\' to exit or any other number to continue...." << endl;
+		proceed = getchar();
+	}while(proceed != '0');
 	
 	return 0;
 }
