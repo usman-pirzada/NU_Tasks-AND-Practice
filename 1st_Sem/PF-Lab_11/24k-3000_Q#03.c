@@ -1,39 +1,43 @@
 #include <stdio.h>
-#include <error.h>
+#include <stdlib.h>
 
 int main() {
-	char buffer[1000];
-	FILE *fptr1, *fptr2;
+	char buffer;
+	FILE *file1 = NULL, *file2 = NULL;
 	
-	fptr1 = fopen("firstFile.txt", "r");
-	if(fptr1 == NULL) {
-		perror("Error (firstFile.txt)");
-		fptr1 = fopen("firstFile.txt", "a");
+	file1 = fopen("File_01.txt", "r+");
+	if(file1 == NULL) {
+		perror("\n Unable to process file");
+		fclose(file1);
+		return 1;
 	}
-	fptr2 = fopen("secondFile.txt", "a");
-	if(fptr2 == NULL) {
-		perror("Error (secondFile.txt)");
-		return 0;
-	}
-	
-	fprintf(fptr2, "\n");
-	while(buffer != '\n') {
-		fgets(buffer, 1000, fptr1);
-		fputs(buffer, fptr2);
-	}
-	fclose(fptr1);
-	
-	fptr1 = fopen("mrgFile.txt", "w");
-	if(fptr1 == NULL) {
-		perror("Error (mrgFile.txt)");
-		return 0;
-	}
-	while(buffer != '\n') {
-		fgets(buffer, 100, fptr2);
-		fputs(buffer, fptr1);
+	file2 = fopen("File_02.txt", "r");
+	if(file1 == NULL || file2 == NULL) {
+		perror("\n File_02.txt not found");
+		fclose(file2);
+		return 1;
 	}
 	
-	fclose(fptr1);
-	fclose(fptr2);
+	fseek(file1, 0, SEEK_END);
+	fprintf(file1, "\n");
+	while((buffer = fgetc(file2)) != EOF) {
+		fprintf(file1, "%c", buffer);	//fputc(buffer, file1);
+	}
+	fclose(file2);
+	printf("\nThe content of file \"File_02.txt\" has been merged to the file \"File_01.txt\" successfully!\n");
+	
+	file2 = fopen("mergedCpy.txt", "w");
+	if(file2 == NULL) {
+		perror("\n Unable to process file");
+		fclose(file1);
+		return 1;
+	}
+	while((buffer = fgetc(file1)) != EOF) {
+		fputc(buffer, file2);
+	}
+	printf("\nThe content of file \"File_02.txt\" has been copied to the file \"mergedCpy.txt\" successfully!");
+	fclose(file1);
+	fclose(file2);
+	
 	return 0;
 }
