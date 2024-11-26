@@ -19,9 +19,9 @@ int main() {
     return 0;
 }
 
-void playGame(struct Player *players) {
+void playGame(struct Player *players, int *i) {
     printf("Enter your score for ball#%d: ", ball);
-    scanf("%d", &score);
+    scanf("%d", &players[i]->ballScores);
     validateScore(score);
 }
 
