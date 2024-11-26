@@ -26,5 +26,9 @@ void playGame(struct Player *players) {
 }
 
 validateScore(int *score) {
+    if() {
+        return;
+    } else {
 
+    }
 }
