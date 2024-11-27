@@ -1,35 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define totPlyr 2	// For two players
+
+void playGame(struct, int*);
+bool validateScore(int *);
+findWinner();
+scoreBoard()
 
 struct Player {
 	char playerName[20];
-	unsigned int ballScores;
+	unsigned int ballScores[12];
 	unsigned int totalScore;
 };
 
 int main() {
-	struct Player players[p];
-    for(int i = 0, i < p; i++) {    // Iterate for two players
-        for(int balls = 1; balls <= 12; balls++) {  // Iterate for 12 balls
-            playGame(players[i], i);
+	struct Player players[totPlyr];
+    for(int plyr = 0, plyr < totPlyr; plyr++) {    // Iterate for two players
+        for(int ball = 0; ball < 12; ball++) {  // Iterate for 12 balls
+            playGame(players[plyr], plyr, ball);
         }
     }
 	
 	return 0;
 }
 
-void playGame(struct Player *players, int *i) {
-    printf("Enter your score for ball#%d: ", ball);
-    scanf("%d", &players[i]->ballScores);
-    validateScore(score);
+void playGame(struct Player (*players)[], int *plyr, int *ball) {
+	int currentScore = 0;
+
+    printf("Enter your score for ball#%d: ", ball + 1);
+	scanf("%d", &currentScore);
+	if(validateScore(currentScore)) {
+		players[plyr]->ballScores[ball] = currentScore;
+	}
 }
 
-validateScore(int *score) {
-    if() {
-        return;
+bool validateScore(int *currentScore) {
+    if(currentScore >= 0 && currentScore <= 6) {
+        return 1;
     } else {
-
-    }
+		return 0;
+	}
 }
 
 findWinner() {
